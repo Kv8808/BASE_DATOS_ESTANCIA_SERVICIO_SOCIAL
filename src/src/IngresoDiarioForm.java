@@ -483,13 +483,14 @@ public class IngresoDiarioForm extends JFrame {
     private JPanel crearPanelBotones() {
         JPanel panel = new JPanel(new FlowLayout(FlowLayout.CENTER, 10, 10));
 
-
         lblPagina = new JLabel("PAGINA: 0");
         panel.add(lblPagina);
 
+        
         panel.add(label("BUSCAR PACIENTE:"));
         txtBuscarNombre = new JTextField(15);
-
+        txtBuscarNombre.setToolTipText("Escribe el nombre del paciente y pulsa BUSCAR");
+        panel.add(txtBuscarNombre);
 
         btnBuscar = new JButton("BUSCAR");
         btnBuscar.setFont(new Font("Segoe UI", Font.BOLD, 14));
@@ -497,13 +498,11 @@ public class IngresoDiarioForm extends JFrame {
         btnBuscar.addActionListener(e -> buscarPaciente());
         panel.add(btnBuscar);
 
-
         btnGuardar = new JButton("GUARDAR");
         btnGuardar.setFont(new Font("Segoe UI", Font.BOLD, 14));
         btnGuardar.setPreferredSize(new Dimension(120, 30));
         btnGuardar.addActionListener(e -> guardarIngreso());
         panel.add(btnGuardar);
-
 
         JButton btnNuevoRegistro = new JButton("NUEVO");
         btnNuevoRegistro.setFont(new Font("Segoe UI", Font.BOLD, 14));
@@ -511,13 +510,11 @@ public class IngresoDiarioForm extends JFrame {
         btnNuevoRegistro.addActionListener(e -> limpiarFormulario());
         panel.add(btnNuevoRegistro);
 
-
         JButton btnAnterior = new JButton("←");
         btnAnterior.setFont(new Font("Segoe UI", Font.BOLD, 14));
         btnAnterior.setPreferredSize(new Dimension(50, 30));
         btnAnterior.addActionListener(e -> irAlAnterior());
         panel.add(btnAnterior);
-
 
         JButton btnSiguiente = new JButton("→");
         btnSiguiente.setFont(new Font("Segoe UI", Font.BOLD, 14));
@@ -538,8 +535,6 @@ public class IngresoDiarioForm extends JFrame {
                 "CONFIRMAR SALIDA",
                 JOptionPane.YES_NO_OPTION
             );
-            
-
 
             if (opcion == JOptionPane.YES_OPTION) {
                 dispose();
@@ -550,7 +545,6 @@ public class IngresoDiarioForm extends JFrame {
 
         return panel;
     }
-
 
 
     

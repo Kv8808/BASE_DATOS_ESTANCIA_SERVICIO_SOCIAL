@@ -20,6 +20,7 @@ public class ConexionBD {
             }
         } catch (SQLException e) {
             System.out.println("❌ Error al conectar: " + e.getMessage());
+            e.printStackTrace();
         }
         return conexion;
     }
@@ -32,6 +33,7 @@ public class ConexionBD {
             }
         } catch (SQLException e) {
             System.out.println("⚠️ Error al cerrar la conexión: " + e.getMessage());
+            e.printStackTrace();
         }
     }
 }
